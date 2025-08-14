@@ -3,23 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Menu Kedai Hazim</title>
-  <style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-.menu-item {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-}
-button {
-  background: green;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Menu Kedai Hazim</h1>
@@ -44,32 +28,6 @@ button {
     <button type="submit">Hantar Order</button>
   </form>
 
-  <script>
-    let cart = [];
-let total = 0;
-
-function addToCart(item, price) {
-  cart.push({ item, price });
-  total += price;
-  updateCart();
-}
-
-function updateCart() {
-  const cartList = document.getElementById('cart');
-  cartList.innerHTML = '';
-  cart.forEach(c => {
-    const li = document.createElement('li');
-    li.textContent = `${c.item} - RM${c.price.toFixed(2)}`;
-    cartList.appendChild(li);
-  });
-  document.getElementById('total').textContent = total.toFixed(2);
-}
-
-document.getElementById('orderForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Order dihantar! (Boleh sambung ke Google Sheet atau WhatsApp API)');
-});
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
